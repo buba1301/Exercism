@@ -1,7 +1,6 @@
 import { BankAccount, ValueError } from './bank-account';
 
 describe('Bank Account', () => {
-
   test('newly opened account has zero balance', () => {
     const account = new BankAccount();
     account.open();
@@ -44,6 +43,8 @@ describe('Bank Account', () => {
     const account = new BankAccount();
     account.open();
     account.close();
+    console.log('RES', account.active);
+
     expect(() => account.balance).toThrow(ValueError);
   });
 
@@ -114,5 +115,4 @@ describe('Bank Account', () => {
       account.deposit(-50);
     }).toThrow(ValueError);
   });
-
 });
