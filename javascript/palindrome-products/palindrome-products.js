@@ -14,16 +14,7 @@ export class Palindromes {
       throw new Error('min must be <= max');
     }
 
-    const isPalindrom = (str) => {
-      for (let i = 0; i < str.length; i += 1) {
-        const fromBeginIndex = i;
-        const fromEndIndex = str.length - i - 1;
-        if (str[fromBeginIndex] !== str[fromEndIndex]) {
-          return false;
-        }
-      }
-      return true;
-    };
+    const isPalindrom = (str) => str === str.split('').reverse().join('');
 
     let res = {};
 
